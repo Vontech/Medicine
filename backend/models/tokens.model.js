@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import Users from './users.model';
 
 const TokenSchema = new mongoose.Schema({
   accessToken: { type: String },
@@ -8,7 +7,6 @@ const TokenSchema = new mongoose.Schema({
   clientId: { type: String },
   refreshToken: { type: String },
   refreshTokenExpiresAt: { type: Date },
-  //user : { type: Users.schema },
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' },
   userId: { type: String },
 });
