@@ -52,7 +52,6 @@ export function prepareServer(done) {
 }
 
 const testsToFinish = {
-    'events': false,
     'users': false
 }
 
@@ -61,8 +60,10 @@ export function teardownServer(test, done) {
     testsToFinish[test] = true;
 
     if (Object.values(testsToFinish).reduce((prev, current) => prev && current)) {
+        console.log("Closing server...");
         app.server.close();
         console.log("\nTEARING DOWN TEST SERVER");
+        console.log("Closing database...");
         mongoose.connection.close(done);
     } else {
         done();
