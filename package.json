@@ -2,15 +2,15 @@
   "name": "medicine",
   "version": "1.0.0",
   "scripts": {
-    "preinstall": "npm install -g concurrently",
+    "preinstall": "yarn install -g concurrently",
     "client": "cd frontend && yarn start",
     "server": "nodemon server.js --exec babel-node",
-    "dev": "npm install -g concurrently && concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "dev": "yarn global add concurrently && concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "test-server": "NODE_ENV=test node node_modules/nyc/bin/nyc.js node_modules/mocha/bin/_mocha backend/test/ --recursive --timeout 80000 --compilers js:babel-core/register --require babel-polyfill",
     "server-coverage": "NODE_ENV=test node_modules/nyc/bin/nyc.js report --reporter=text-lcov > coverage.lcov && node_modules/codecov/bin/codecov",
     "test-frontend": "",
     "test": "",
-    "start": "npm run dev"
+    "start": "yarn run dev"
   },
   "dependencies": {
     "bcrypt": "^3.0.3",
