@@ -10,7 +10,8 @@
     "server-coverage": "NODE_ENV=test node_modules/nyc/bin/nyc.js report --reporter=text-lcov > coverage.lcov && node_modules/codecov/bin/codecov",
     "test-frontend": "",
     "test": "",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "heroku": "node server.js --exec babel-node"
   },
   "dependencies": {
     "bcrypt": "^3.0.3",
