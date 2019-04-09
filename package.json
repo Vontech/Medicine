@@ -2,6 +2,7 @@
   "name": "medicine",
   "version": "1.0.0",
   "scripts": {
+    "preinstall": "npm install -g concurrently",
     "client": "cd frontend && yarn start",
     "server": "nodemon server.js --exec babel-node",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
