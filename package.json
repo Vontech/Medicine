@@ -2,7 +2,7 @@
   "name": "medicine",
   "version": "1.0.0",
   "scripts": {
-    "preinstall": "yarn global add concurrently",
+    "preinstall": "yarn global add concurrently && yarn global add nodemon",
     "client": "cd frontend && yarn start",
     "server": "nodemon server.js --exec babel-node",
     "dev": "yarn global add concurrently && concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
