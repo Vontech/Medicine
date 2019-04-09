@@ -28,7 +28,7 @@ app.use(morgan('dev', { stream: logger.stream }));
 app.oauth = new OAuthServer({
   model: auth,
   debug: true,
-  useErrorHandler: true
+  useErrorHandler: false
 });
 
 app.all('/oauth/token', app.oauth.token());

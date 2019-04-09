@@ -126,6 +126,7 @@ describe('Users', () => {
                 .end((err, res) => {
                     if (err) return done(err);
                     res.should.have.status(400);
+                    console.log(res.body)
                     res.body.should.be.a('object');
                     res.body.should.have.property('error_description');
                     res.body.should.have.property('error_description').contains('invalid')
