@@ -11,7 +11,7 @@
     "test-frontend": "",
     "test": "",
     "start": "yarn run dev",
-    "heroku": "yarn run server"
+    "heroku": "yarn global add concurrently && yarn global add nodemon && yarn run server"
   },
   "dependencies": {
     "bcrypt": "^3.0.3",
