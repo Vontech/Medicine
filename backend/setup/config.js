@@ -7,6 +7,7 @@ config.logFileName = 'app.log';
 config.dbHost = process.env.dbHost || 'localhost';
 config.dbPort = process.env.dbPort || '27017';
 config.dbName = process.env.dbName || 'medicinelocal';
+config.dbURI = process.env.MONGODB_URI || null;
 
 // Client id and client secret for OAuth 2.0
 // NOTE: The client secret should be kepy secret! Preferably set this variable

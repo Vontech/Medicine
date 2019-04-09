@@ -9,10 +9,14 @@ import logger from './logger';
 import config from './config';
 
 export async function setupDB() {
-    const { dbHost, dbPort, dbName } = config;
+    const { dbHost, dbPort, dbName, dbURI } = config;
     try {
-        await Mongoose.connect(`mongodb://${dbHost}:${dbPort}/${dbName}`);
-        logger.info(`Connected to mongo server at mongodb://${dbHost}:${dbPort}/${dbName}`);
+        let mongoURI = `mongodb://${dbHost}:${dbPort}/${dbName}`
+        if (dbURI) {
+            mongoURI = dbURI; // Use mongo URI if given by Heroku
+        }
+        await Mongoose.connect(mongoURI);
+        logger.info(`Connected to mongo server at ${mongoURI}`);
 
         await createBaseClient();
 
