@@ -10,7 +10,8 @@
     "server-coverage": "NODE_ENV=test node_modules/nyc/bin/nyc.js report --reporter=text-lcov > coverage.lcov && node_modules/codecov/bin/codecov",
     "test-frontend": "",
     "test": "",
-    "start": "yarn run dev"
+    "start": "yarn run dev",
+    "heroku": "yarn run server"
   },
   "dependencies": {
     "bcrypt": "^3.0.3",
